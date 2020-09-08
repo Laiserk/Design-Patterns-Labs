@@ -1,1 +1,1 @@
-# Dsign-Patterns-Labs
+# Design-Patterns-Labs
