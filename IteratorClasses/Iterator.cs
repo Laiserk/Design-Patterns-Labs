@@ -6,11 +6,7 @@ namespace IteratorClasses
 {
     interface Iterator
     {
-        void First();
-        void Next();
-
-        bool IsDone();
-
+        bool Next();
         string CurrentItem();
     }
 }

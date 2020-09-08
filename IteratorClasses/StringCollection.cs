@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IteratorClasses
 {
-    class ConcreateCollection
+    class StringCollection
     {
     }
 }
