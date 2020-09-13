@@ -6,9 +6,9 @@ namespace IteratorClasses
 {
     class StringCollection 
     {
-        void CreateIterator()
+        Iterator CreateIterator()
         {
-           // return new StringIterator(this); FIXIT
+            return (Iterator)new StringIterator(this);
         }
     }
 }
