@@ -16,7 +16,7 @@ namespace IteratorClasses
         {
             current++;
             object item = null;
-            if (current < col.strings.Count())
+            if (current < col.strings.Length)
             {
                 item = col.strings[current];
             }
@@ -24,7 +24,7 @@ namespace IteratorClasses
         }
         public bool HasMore()
         {
-            return current >= col.strings.Count();
+            return current <= col.strings.Length;
         }
         //public  object CurrentItem()
         //{

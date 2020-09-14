@@ -5,12 +5,12 @@ using System.Text;
 
 namespace IteratorClasses
 {
-    public class StringCollection:IterableCollection
+    public class StringCollection : IterableCollection
     {
         public string[] strings { get; private set; }
         public Iterator CreateIterator()
         {
-           return new StringIterator(this);
+            return new StringIterator(this);
         }
 
         public bool ReadFile(string path)
