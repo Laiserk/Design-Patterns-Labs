@@ -1,14 +1,27 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 
 namespace IteratorClasses
 {
-    class StringCollection 
+    class StringCollection:IterableCollection
     {
-        void CreateIterator()
+        private string[] strings;
+        public Iterator CreateIterator()
         {
-           // return new StringIterator(this); FIXIT
+           return new StringIterator(this);
+        }
+
+        public bool ReadFile(string path)
+        {
+            if (File.Exists(path))
+            {
+                strings = File.ReadAllLines(path);
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
