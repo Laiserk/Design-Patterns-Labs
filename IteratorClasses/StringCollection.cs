@@ -7,7 +7,7 @@ namespace IteratorClasses
 {
     class StringCollection:IterableCollection
     {
-        private string[] strings;
+        public string[] strings { get; private set; }
         public Iterator CreateIterator()
         {
            return new StringIterator(this);
