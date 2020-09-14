@@ -10,15 +10,19 @@ namespace Program
             Console.WriteLine("Enter path to the file...");
             string path = Console.ReadLine();
             StringCollection stringCollection = new StringCollection();
-            stringCollection.ReadFile(path);
-            StringIterator iterator = (StringIterator)stringCollection.CreateIterator();
-            while(iterator.HasMore())
+            if(stringCollection.ReadFile(path))
             {
-                Console.WriteLine(iterator.Next());
+                StringIterator iterator = (StringIterator)stringCollection.CreateIterator();
+                while(iterator.HasMore())
+                {
+                    Console.WriteLine(iterator.Next());
+                    Console.ReadKey();
+                }
+                Console.WriteLine("--- End of file ---");
                 Console.ReadKey();
             }
-            Console.WriteLine("End of file...");
-            Console.ReadKey();
+            else
+                Console.WriteLine("No such file");
         }
     }
 }
