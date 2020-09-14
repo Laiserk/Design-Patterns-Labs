@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IteratorClasses
 {
-    class StringCollection:IterableCollection
+    public class StringCollection:IterableCollection
     {
         public string[] strings { get; private set; }
         public Iterator CreateIterator()

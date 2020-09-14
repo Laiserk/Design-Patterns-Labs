@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IteratorClasses
 {
-    interface Iterator
+   public interface Iterator
     {
         object Next();
         bool HasMore();

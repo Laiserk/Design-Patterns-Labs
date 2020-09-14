@@ -4,9 +4,9 @@ using System.Text;
 
 namespace IteratorClasses
 {
-    class StringIterator : Iterator
+    public class  StringIterator : Iterator
     {
-        StringIterator(StringCollection strcoll)
+       public StringIterator(StringCollection strcoll)
         {
             col = strcoll;
         }
