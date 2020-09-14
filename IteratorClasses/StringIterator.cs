@@ -6,5 +6,6 @@ namespace IteratorClasses
 {
     class StringIterator
     {
+
     }
 }

@@ -4,7 +4,11 @@ using System.Text;
 
 namespace IteratorClasses
 {
-    class StringCollection
+    class StringCollection 
     {
+        void CreateIterator()
+        {
+           // return new StringIterator(this); FIXIT
+        }
     }
 }
