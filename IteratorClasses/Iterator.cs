@@ -6,7 +6,10 @@ namespace IteratorClasses
 {
     interface Iterator
     {
-        bool Next();
-        string CurrentItem();
+         object Next();
+         object CurrentItem(); // заменить object на другой тип
+
+        bool HasMore();
+
     }
 }
