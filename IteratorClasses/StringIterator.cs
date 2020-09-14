@@ -6,18 +6,25 @@ namespace IteratorClasses
 {
     class StringIterator : Iterator
     {
+        StringIterator(StringCollection strcoll)
+        {
+            col = strcoll;
+        }
         private int current;
         StringCollection col;
-        public  bool Next()
+        public object Next()
         {
             current++;
-            StringCollection item = null;
-            if(current < col.Count())
+            object item = null;
+            if (current < col.Count())
             {
                 item = col[current];
             }
-            bool isDone = false;
-            return isDone;
+            return item;
+        }
+        public bool HasMore()
+        {
+            return current >= col.Count();
         }
         //public  object CurrentItem()
         //{
