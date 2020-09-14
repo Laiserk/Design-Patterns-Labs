@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IteratorClasses\IteratorClasses.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="InputFile.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
