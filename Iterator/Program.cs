@@ -10,8 +10,8 @@ namespace Program
             Console.WriteLine("Enter path to the file...");
             string path = Console.ReadLine();
             StringCollection stringCollection = new StringCollection();
-            stringCollection.readFile(path);
-            StringIterator iterator = stringCollection.CreateIterator();
+            stringCollection.ReadFile(path);
+            StringIterator iterator = (StringIterator)stringCollection.CreateIterator();
             while(iterator.HasMore())
             {
                 Console.WriteLine(iterator.Next());
