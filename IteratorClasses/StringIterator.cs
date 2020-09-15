@@ -27,9 +27,6 @@ namespace IteratorClasses
         {
             return current <= col.strings.Length;
         }
-        //public  object CurrentItem()
-        //{
-        //    return col[current];
-        //}
+    
     }
 }
