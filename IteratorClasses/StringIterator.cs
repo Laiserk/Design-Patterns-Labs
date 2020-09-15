@@ -14,12 +14,13 @@ namespace IteratorClasses
         StringCollection col;
         public object Next()
         {
-            current++;
+            
             object item = null;
             if (current < col.strings.Length)
             {
                 item = col.strings[current];
             }
+            current++;
             return item;
         }
         public bool HasMore()
