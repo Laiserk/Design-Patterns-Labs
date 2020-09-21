@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    public interface Command
+    interface Command
     {
-        void ExecuteCommand()
-        {
-
-        }
+        void ExecuteCommand();
+        //void UnDO();
     }
 }
