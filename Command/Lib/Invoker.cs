@@ -14,9 +14,9 @@ namespace Lib
         {
             command = c;
         }
-        public void Run(int number)
+        public void Run()
         {
-            command.ExecuteCommand(number);
+            command.ExecuteCommand();
         }
     }
 }
