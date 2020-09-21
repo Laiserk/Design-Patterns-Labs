@@ -6,12 +6,12 @@ namespace IteratorClasses
 {
     public class  StringIterator : Iterator
     {
-       public StringIterator(StringCollection strcoll)
+       public StringIterator(FileStringCollection strcoll)
         {
             col = strcoll;
         }
         private int current;
-        StringCollection col;
+        FileStringCollection col;
         public object Next()
         {
             

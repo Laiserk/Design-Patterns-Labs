@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IteratorClasses
 {
-    public class StringCollection : IterableCollection
+    public class FileStringCollection : IterableCollection
     {
         public string[] strings { get; private set; }
         public Iterator CreateIterator()
@@ -13,15 +13,16 @@ namespace IteratorClasses
             return new StringIterator(this);
         }
 
-        public bool ReadFile(string path)
+        public void ReadFile(string path)
         {
-            if (File.Exists(path))
+            try
             {
                 strings = File.ReadAllLines(path);
-                return true;
             }
-            else
-                return false;
+            catch
+            {
+                throw new FileNotFoundException("There's no such file");
+            }
         }
     }
 }
