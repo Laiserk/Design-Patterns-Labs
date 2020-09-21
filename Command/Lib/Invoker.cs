@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    class Invoker
+    public class Invoker
     {
-        Command command;
-        public void SetCommand(Command c)
+        ICommand command;
+        public Invoker() { }
+        public void SetCommand(ICommand c)
         {
             command = c;
         }
-        public void Run()
+        public void Run(int number)
         {
-            command.ExecuteCommand();
+            command.ExecuteCommand(number);
         }
     }
 }

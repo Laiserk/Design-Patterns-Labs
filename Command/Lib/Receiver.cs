@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    class Receiver
+    public class Receiver
     {
-        public void Operation()
-        { }
+        public void Inversion(int number)
+        {
+            Console.WriteLine(-number);
+        }
     }
 }

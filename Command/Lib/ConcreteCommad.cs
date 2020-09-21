@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    class ConcreteCommad : Command // RENAME
+    public class ConcreteCommad : ICommand // RENAME
     {
         Receiver receiver;
-        public void ExecuteCommand()
+        public ConcreteCommad(Receiver receiver)
         {
-            receiver.Operation();
+            this.receiver = receiver;
+        }
+        public void ExecuteCommand(int number)
+        {
+             receiver.Inversion(number);
+
         }
     }
 }
