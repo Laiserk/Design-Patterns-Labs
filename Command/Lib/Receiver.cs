@@ -16,7 +16,7 @@ namespace Lib
         {
             Console.WriteLine(number1+number2);
         }
-        public void Multiplication(int number1,int? number2)
+        public void Multiplication(int number1,int number2)
         {
             Console.WriteLine(number1 * number2);
         }
