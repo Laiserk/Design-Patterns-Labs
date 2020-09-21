@@ -8,7 +8,7 @@ namespace Lib
 {
     public interface ICommand
     {
-        void ExecuteCommand(int number);
+        void ExecuteCommand(int number1, int? number2 = null);
         //void UnDO();
     }
 }
