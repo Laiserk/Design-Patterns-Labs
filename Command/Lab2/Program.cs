@@ -25,7 +25,7 @@ namespace Lab2
         }
         static void Main(string[] args)
         {
-            CommandProcessor processor = new CommandProcessor();
+            var processor = new CommandProcessor();
             ICommand[] commands = CreateCommands();
             processor.ExecuteBatch(commands);
             Console.ReadKey();
