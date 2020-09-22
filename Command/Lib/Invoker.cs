@@ -16,7 +16,11 @@ namespace Lib
         }
         public void Run()
         {
+            Console.WriteLine(DateTime.Now.ToLongTimeString());
+            Console.WriteLine(command.ToString());
             command.ExecuteCommand();
+            Console.WriteLine(DateTime.Now.ToLongTimeString());
+            Console.WriteLine();
         }
     }
 }
