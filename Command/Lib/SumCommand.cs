@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    public class InversionCommand : ICommand
+    public class SumCommand : ICommand
     {
-        double number;
+        double number1, number2;
         public double Result { get; private set; }
 
-        public InversionCommand(int number)
+        public SumCommand(double number1, double number2)
         {
-            this.number = number;
+            this.number1 = number1;
+            this.number2 = number2;
         }
         public void ExecuteCommand()
         {
-            Result = -number;
+            Result = number1 + number2;
             Console.Write(Result);
         }
 
         public override string ToString()
         {
-            return $"Inversion of {number}";
+            return $"Sum of {number1} and {number2}";
         }
     }
 }
