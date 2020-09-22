@@ -8,11 +8,11 @@ namespace Lib
 {
     public class CommandProcessor
     {   
-       public void ExecuteBatch(ICommand[] commands)
+       public void ExecuteBatch(IEnumerable<ICommand> commands)
         {
-            for(int i = 0; i<commands.Length;i++)
+            foreach(var command in commands)
             {
-                ExecuteCommand(commands[i]);
+                ExecuteCommand(command);
             }
         }
        public ICommand ExecuteCommand(ICommand cmd)

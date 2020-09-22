@@ -23,7 +23,7 @@ namespace Lib
 
         public override string ToString()
         {
-            return $"Inversion of {number}";
+            return $"Inversion of {number} = ";
         }
     }
 }

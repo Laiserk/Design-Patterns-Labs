@@ -24,7 +24,7 @@ namespace Lib
 
         public override string ToString()
         {
-            return $"Multiplication of {number1} and {number2}";
+            return $"Multiplication of {number1} and {number2} = ";
         }
     }
 }

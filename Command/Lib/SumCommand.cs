@@ -24,7 +24,7 @@ namespace Lib
 
         public override string ToString()
         {
-            return $"Sum of {number1} and {number2}";
+            return $"Sum of {number1} and {number2} = ";
         }
     }
 }
