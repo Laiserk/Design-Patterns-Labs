@@ -9,6 +9,7 @@ namespace Lib
     public interface ICommand
     {
         void ExecuteCommand();
+        double Result { get;  }
         //void UnDO();
     }
 }

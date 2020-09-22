@@ -8,7 +8,7 @@ namespace Lab2
         static private ICommand[] CreateCommands()
         {
             Random rand = new Random();
-            Receiver receiver = new Receiver();
+            MathCommandProcessor receiver = new MathCommandProcessor();
 
             ICommand[] commands = new ICommand[10];
             commands[0] = new InversionCommand(receiver, rand.Next(1, 100));
@@ -26,13 +26,9 @@ namespace Lab2
         }
         static void Main(string[] args)
         {
-            Invoker invoker = new Invoker();
+            CommandProcessor processor = new CommandProcessor();
             ICommand[] commands = CreateCommands();
-            for (int i = 0; i < commands.Length; i++)
-            {
-                invoker.SetCommand(commands[i]);
-                invoker.Run();
-            }
+            processor.ExecuteBatch(commands);
             Console.ReadKey();
         }
     }
