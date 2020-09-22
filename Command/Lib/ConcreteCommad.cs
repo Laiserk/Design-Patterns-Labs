@@ -15,18 +15,17 @@ namespace Lib
        
         public InversionCommand(Receiver receiver, int number)
         {
-          
             this.receiver = receiver;
             this.number = number;
         }
         public void ExecuteCommand()
         {
-           
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            Console.Write($"Taking the inversion of a number {number} = ");
             receiver.Inversion(number);
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            Console.WriteLine();
+        }
+
+        public override string ToString()
+        {
+            return $"Inversion of {number}";
         }
     }
     public class SumCommand : ICommand 
@@ -36,19 +35,18 @@ namespace Lib
       
         public SumCommand(Receiver receiver, int number1, int number2)
         {
-           
             this.receiver = receiver;
             this.number1 = number1;
             this.number2 = number2;
         }
         public void ExecuteCommand()
         {
-
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            Console.Write($"Sum {number1} and {number2} = ");
             receiver.Sum(number1,number2);
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            Console.WriteLine();
+        }
+
+        public override string ToString()
+        {
+            return $"Sum of {number1} and {number2}";
         }
     }
     public class MultiplicationCommand : ICommand 
@@ -64,13 +62,12 @@ namespace Lib
         }
         public void ExecuteCommand()
         {
-
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            Console.Write($"Multiplication {number1} and {number2} = ");
             receiver.Multiplication(number1,number2);
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            Console.WriteLine();
+        }
 
+        public override string ToString()
+        {
+            return $"Multiplication of {number1} and {number2}";
         }
     }
 }
