@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    public interface ICommand
+    class InversionCommand
     {
-        void ExecuteCommand();
-        double Result { get;  }
-        //void UnDO();
     }
 }

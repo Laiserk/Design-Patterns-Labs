@@ -10,10 +10,10 @@ namespace Lib
     
     public class InversionCommand : ICommand 
     {
-        Receiver receiver;
+        MathCommandProcessor receiver;
         int number;
        
-        public InversionCommand(Receiver receiver, int number)
+        public InversionCommand(MathCommandProcessor receiver, int number)
         {
             this.receiver = receiver;
             this.number = number;
@@ -30,10 +30,10 @@ namespace Lib
     }
     public class SumCommand : ICommand 
     {
-        Receiver receiver;
+        MathCommandProcessor receiver;
         int number1,number2;
       
-        public SumCommand(Receiver receiver, int number1, int number2)
+        public SumCommand(MathCommandProcessor receiver, int number1, int number2)
         {
             this.receiver = receiver;
             this.number1 = number1;
@@ -51,10 +51,11 @@ namespace Lib
     }
     public class MultiplicationCommand : ICommand 
     {
-        Receiver receiver;
-        int number1, number2;
+        MathCommandProcessor receiver;
+        double number1, number2;
+        double result;
         
-        public MultiplicationCommand(Receiver receiver, int number1, int number2)
+        public MultiplicationCommand(MathCommandProcessor receiver, int number1, int number2)
         {
             this.receiver = receiver;
             this.number1 = number1;

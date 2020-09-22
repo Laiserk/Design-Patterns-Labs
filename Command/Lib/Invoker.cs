@@ -16,10 +16,11 @@ namespace Lib
         }
         public void Run()
         {
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            Console.WriteLine(command.ToString());
+            DateTime t = DateTime.Now;
+            Console.Write($"{t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond} ");
+            Console.Write(command.ToString());
             command.ExecuteCommand();
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
+            Console.Write($" {t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond}");
             Console.WriteLine();
         }
     }

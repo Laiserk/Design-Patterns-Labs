@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    public class Receiver
+    public class MathCommandProcessor
     {
-        public void Inversion(int number)
+        public void Inversion(double number)
         {
-            Console.WriteLine(-number);
+            Console.Write(-number);
         }
-        public void Sum(int number1, int? number2)
+        public void Sum(double number1, double number2)
         {
-            Console.WriteLine(number1+number2);
+            Console.Write(number1+number2);
         }
-        public void Multiplication(int number1,int number2)
+        public void Multiplication(double number1,double number2)
         {
-            Console.WriteLine(number1 * number2);
+            result = number1 * number2
+            Console.Write();
         }
     }
 }
