@@ -18,12 +18,10 @@ namespace Lib
        public ICommand ExecuteCommand(ICommand cmd)
         {
             DateTime t = DateTime.Now;
-            Console.Write($"{t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond} ");
-            Console.Write(cmd.ToString());
+            Console.Write($"{t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond} {cmd}");
             cmd.ExecuteCommand();
             t = DateTime.Now;
-            Console.Write($" {t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond}");
-            Console.WriteLine();
+            Console.WriteLine($" {t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond}");
             return cmd;
         }
     }
