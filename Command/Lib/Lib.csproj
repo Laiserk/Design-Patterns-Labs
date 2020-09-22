@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
+    <Compile Include="CommandProcessor.cs" />
     <Compile Include="InversionCommand.cs" />
     <Compile Include="Invoker.cs" />
     <Compile Include="MultiplicationCommand.cs" />
