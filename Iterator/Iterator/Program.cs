@@ -9,8 +9,7 @@ namespace Program
         {
             Console.WriteLine("Enter path to the file...");
             string path = Console.ReadLine();
-            FileStringCollection stringCollection = new FileStringCollection();
-            stringCollection.ReadFile(path);
+            FileStringCollection stringCollection = new FileStringCollection(path);
             StringIterator iterator = (StringIterator)stringCollection.CreateIterator();
             while(iterator.HasMore())
             {
