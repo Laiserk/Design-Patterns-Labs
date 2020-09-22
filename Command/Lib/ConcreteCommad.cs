@@ -8,12 +8,12 @@ using System.Runtime;
 namespace Lib
 {
     
-    public class InversionCommnad : ICommand 
+    public class InversionCommand : ICommand 
     {
         Receiver receiver;
         int number;
        
-        public InversionCommnad(Receiver receiver, int number)
+        public InversionCommand(Receiver receiver, int number)
         {
           
             this.receiver = receiver;
@@ -29,12 +29,12 @@ namespace Lib
             Console.WriteLine();
         }
     }
-    public class SumCommnad : ICommand 
+    public class SumCommand : ICommand 
     {
         Receiver receiver;
         int number1,number2;
       
-        public SumCommnad(Receiver receiver, int number1, int number2)
+        public SumCommand(Receiver receiver, int number1, int number2)
         {
            
             this.receiver = receiver;
@@ -51,12 +51,12 @@ namespace Lib
             Console.WriteLine();
         }
     }
-    public class MultiplicationCommnad : ICommand 
+    public class MultiplicationCommand : ICommand 
     {
         Receiver receiver;
         int number1, number2;
         
-        public MultiplicationCommnad(Receiver receiver, int number1, int number2)
+        public MultiplicationCommand(Receiver receiver, int number1, int number2)
         {
             this.receiver = receiver;
             this.number1 = number1;
