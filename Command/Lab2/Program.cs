@@ -26,13 +26,9 @@ namespace Lab2
         }
         static void Main(string[] args)
         {
-            Invoker invoker = new Invoker();
+            CommandProcessor processor = new CommandProcessor();
             ICommand[] commands = CreateCommands();
-            for (int i = 0; i < commands.Length; i++)
-            {
-                invoker.SetCommand(commands[i]);
-                invoker.Run();
-            }
+            processor.ExecuteBatch(commands);
             Console.ReadKey();
         }
     }
