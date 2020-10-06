@@ -44,6 +44,7 @@
     <Compile Include="Command.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="CommandProcessor.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="InversionCommand.cs" />
     <Compile Include="MultiplicationCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

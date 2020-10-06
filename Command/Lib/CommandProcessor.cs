@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 namespace Lib
 {
     public class CommandProcessor
-    {   
-       public void ExecuteBatch(IEnumerable<ICommand> commands)
+    {
+        public CommandProcessor(ILogger logger)
+        {
+            if(logger == null)
+            {
+                throw new ArgumentNullException();
+            }
+            Logger = logger;
+        }
+        ILogger Logger { get; set; }
+        public void ExecuteBatch(IEnumerable<ICommand> commands)
         {
             foreach(var command in commands)
             {
@@ -18,10 +27,10 @@ namespace Lib
        public ICommand ExecuteCommand(ICommand cmd)
         {
             DateTime t = DateTime.Now;
-            Console.Write($"{t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond} {cmd}");
+            Logger.Write($"{t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond} {cmd}");
             cmd.ExecuteCommand();
             t = DateTime.Now;
-            Console.WriteLine($" = {cmd.Result} {t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond}");
+            Logger.Write($" = {cmd.Result} {t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond}\n");
             return cmd;
         }
     }
