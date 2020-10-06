@@ -16,7 +16,7 @@ namespace Lib
             }
             Logger = logger;
         }
-        ILogger Logger { get; set; }
+        private ILogger Logger { get; set; }
         public void ExecuteBatch(IEnumerable<ICommand> commands)
         {
             foreach(var command in commands)
