@@ -21,7 +21,7 @@ namespace Lib
             Console.Write($"{t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond} {cmd}");
             cmd.ExecuteCommand();
             t = DateTime.Now;
-            Console.WriteLine($" {t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond}");
+            Console.WriteLine($" = {cmd.Result} {t.Hour}:{t.Minute}:{t.Second}:{t.Millisecond}");
             return cmd;
         }
     }

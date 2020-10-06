@@ -17,12 +17,11 @@ namespace Lib
         public override void ExecuteCommand()
         {
             Result = -number;
-            Console.Write(Result);
         }
 
         public override string ToString()
         {
-            return $"Inversion of {number} = ";
+            return $"Inversion of {number}";
         }
     }
 }

@@ -18,13 +18,12 @@ namespace Lib
         public override void ExecuteCommand()
         {
             Result = number1 * number2;
-            Console.Write(Result);
             state = CommandState.Succeed;
         }
 
         public override string ToString()
         {
-            return $"Multiplication of {number1} and {number2} = ";
+            return $"Multiplication of {number1} and {number2}";
         }
     }
 }

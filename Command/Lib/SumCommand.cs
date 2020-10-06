@@ -18,12 +18,11 @@ namespace Lib
         public override void ExecuteCommand()
         {
             Result = number1 + number2;
-            Console.Write(Result);
         }
 
         public override string ToString()
         {
-            return $"Sum of {number1} and {number2} = ";
+            return $"Sum of {number1} and {number2}";
         }
     }
 }
