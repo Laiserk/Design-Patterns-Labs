@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab3
+namespace AbstractFactory
 {
     class Program
     {
