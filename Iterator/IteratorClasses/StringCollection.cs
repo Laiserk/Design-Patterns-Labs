@@ -7,13 +7,7 @@ namespace IteratorClasses
 {
     public class FileStringCollection : IterableCollection
     {
-        public string[] strings { get; private set; }
-        public Iterator CreateIterator()
-        {
-            return new StringIterator(this);
-        }
-
-        public void ReadFile(string path)
+        public FileStringCollection(string path)
         {
             try
             {
@@ -23,6 +17,11 @@ namespace IteratorClasses
             {
                 throw new FileNotFoundException("There's no such file");
             }
+        }
+        public string[] strings { get; private set; }
+        public Iterator CreateIterator()
+        {
+            return new StringIterator(this);
         }
     }
 }

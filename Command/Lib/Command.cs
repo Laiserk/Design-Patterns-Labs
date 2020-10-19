@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    public interface ICommand
+    abstract public class Command : ICommand
     {
-        void ExecuteCommand();
-        //void UnDO();
+        public double Result { get; protected set; }
+
+        public CommandState state { get; protected set; }
+
+        abstract public void ExecuteCommand();
     }
 }
