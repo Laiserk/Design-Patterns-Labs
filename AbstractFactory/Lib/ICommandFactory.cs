@@ -8,6 +8,6 @@ namespace Lib
 {
     interface ICommandFactory
     {
-
+        ICommand createCommand();
     }
 }
