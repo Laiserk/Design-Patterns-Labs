@@ -5,7 +5,7 @@ using Lib;
 
 namespace Lab2
 {
-    class ConsoleLogger : ILogger
+    public class ConsoleLogger : ILogger
     {
         public void Write(string message)
         {
