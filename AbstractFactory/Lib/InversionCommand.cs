@@ -10,7 +10,7 @@ namespace Lib
     {
         double number;
 
-        public InversionCommand(int number)
+        public InversionCommand(double number)
         {
             this.number = number;
         }
