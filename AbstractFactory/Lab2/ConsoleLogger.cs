@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Lib;
+using Lib.Interfaces;
 
 namespace Lab2
 {

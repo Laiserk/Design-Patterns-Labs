@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lib.Interfaces;
 
-namespace Lib.Interfaces
+namespace Lib.Factories
 {
-    interface ICommandFactory
+    public class LocalFileFactory : ICommandFactory
     {
-        ICommand createCommand();
+
     }
 }
