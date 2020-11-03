@@ -8,6 +8,6 @@ namespace Lib.Interfaces
 {
     interface ICommandFactory
     {
-        ICommand createCommand(CommandType type, List<double> args);
+        List<ICommand> createCommands(List<CommandType> types, List<List<double>> args);
     }
 }
