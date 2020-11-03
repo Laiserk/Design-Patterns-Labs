@@ -22,9 +22,6 @@ namespace Lib.Factories
             }
             return commands;
         }
-        public ICommand createCommand(CommandType type, List<double> args)
-        {
-            if (type == CommandType.Sum)
         protected ICommand createCommand(CommandType type, List<double> args)
         {
             if (type == CommandType.Sum)
