@@ -13,7 +13,7 @@ namespace Lib.Factories
     {
         protected override string[] ReadFile(string url)
         {
-            var webRequest = WebRequest.Create(@"http://oxid15.github.io/misc/RemoteConfig.tsv");
+            var webRequest = WebRequest.Create(url);
 
             using (var response = webRequest.GetResponse())
             using (var content = response.GetResponseStream())

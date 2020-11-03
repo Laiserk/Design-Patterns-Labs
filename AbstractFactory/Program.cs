@@ -11,11 +11,14 @@ namespace AbstractFactory
         static void Main(string[] args)
         {
             var configFileName = args[0];
-         
-            var localFactory = new LocalFileFactory();
-            var commands = localFactory.createCommands(configFileName);
+            BaseFileFactory factory;
+            if (configFileName.Contains("://"))
+                factory = new RemoteFileFactory();
+            else
+                factory = new LocalFileFactory();
+            var commands = factory.createCommands(configFileName);
  
-            var processor = new CommandProcessor((ILogger)new ConsoleLogger());
+            var processor = new CommandProcessor(new ConsoleLogger());
             processor.ExecuteBatch(commands);
             Console.ReadKey();
         }

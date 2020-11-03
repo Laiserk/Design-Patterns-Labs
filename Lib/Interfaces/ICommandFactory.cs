@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Interfaces
 {
-    interface ICommandFactory
+    public interface ICommandFactory
     {
         List<ICommand> createCommands(string path);
     }
