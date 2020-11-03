@@ -6,7 +6,7 @@ using Lib.Interfaces;
 
 namespace Lib.Factories
 {
-    abstract class BaseFileFactory : ICommandFactory
+    public abstract class BaseFileFactory : ICommandFactory
     {
         public List<ICommand> createCommands(string path)
         {

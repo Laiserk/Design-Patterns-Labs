@@ -9,9 +9,9 @@ using System.IO;
 
 namespace Lib.Factories
 {
-    public class RemoteFileFactory : ICommandFactory
+    public class RemoteFileFactory : BaseFileFactory
     {
-        protected string[] ReadFile(string url)
+        protected override string[] ReadFile(string url)
         {
             var webRequest = WebRequest.Create(@"http://oxid15.github.io/misc/RemoteConfig.tsv");
 
