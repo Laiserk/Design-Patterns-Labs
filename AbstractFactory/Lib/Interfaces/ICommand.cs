@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Lib.Interfaces
 {
+    public enum CommandType
+    {
+        Sum,
+        Inversion,
+        Multiplication
+    }
+
     public enum CommandState
     {
         Unprocessed,
