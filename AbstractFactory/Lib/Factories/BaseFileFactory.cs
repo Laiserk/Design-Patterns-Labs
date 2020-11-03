@@ -6,11 +6,25 @@ using Lib.Interfaces;
 
 namespace Lib.Factories
 {
-    class BaseFileFactory : ICommandFactory
+    abstract class BaseFileFactory : ICommandFactory
     {
+        public List<ICommand> createCommands(string path)
+        {
+            var lines = ReadFile(path);
+            var commandTypes = new List<CommandType>();
+            var args = new List<List<double>>();
+            ParseFile(lines, commandTypes, args);
+
+            var commands = new List<ICommand>(commandTypes.Count);
+            for(int i = 0; i < commandTypes.Count; i++)
+            {
+                commands[i] = createCommand(commandTypes[i], args[i]);
+            }
+            return commands;
+        }
         public ICommand createCommand(CommandType type, List<double> args)
         {
-            if(type == CommandType.Sum)
+            if (type == CommandType.Sum)
             {
                 return new SumCommand(args[0], args[1]);
             }
@@ -25,5 +39,7 @@ namespace Lib.Factories
             else
                 return null;
         }
+
+        protected abstract string[] ReadFile(string path);
     }
 }
