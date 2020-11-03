@@ -4,8 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lib
+namespace Lib.Interfaces
 {
+    public enum CommandType
+    {
+        Sum,
+        Inversion,
+        Multiplication
+    }
+
     public enum CommandState
     {
         Unprocessed,

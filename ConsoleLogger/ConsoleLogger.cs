@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Lib;
+using Lib.Interfaces;
 
 namespace Lab2
 {
-    class ConsoleLogger : ILogger
+    public class ConsoleLogger : ILogger
     {
         public void Write(string message)
         {
