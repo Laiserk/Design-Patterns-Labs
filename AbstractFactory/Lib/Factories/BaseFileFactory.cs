@@ -11,14 +11,12 @@ namespace Lib.Factories
         public List<ICommand> createCommands(string path)
         {
             var lines = ReadFile(path);
-            var commandTypes = new List<CommandType>();
-            var args = new List<List<double>>();
-            ParseFile(lines, commandTypes, args);
+            var descriptions = ParseFile(lines);
 
-            var commands = new List<ICommand>(commandTypes.Count);
-            for(int i = 0; i < commandTypes.Count; i++)
+            var commands = new List<ICommand>(descriptions.Count);
+            for(int i = 0; i < descriptions.Count; i++)
             {
-                commands.Add(createCommand(commandTypes[i], args[i]));
+                commands.Add(createCommand(descriptions[i].type, descriptions[i].args));
             }
             return commands;
         }
@@ -37,67 +35,20 @@ namespace Lib.Factories
                 return new MultiplicationCommand(args[0], args[1]);
             }
             else
-                return null;
+                throw (new ArgumentException($"Operation with type '{type.ToString()}' does not exist"));
         }
 
         protected abstract string[] ReadFile(string path);
-        protected static string[] ParseFile(string[] lines, List<CommandType> types, List<List<double>> args)
-        {
-           
 
+        protected static List<CommandDescription> ParseFile(string[] lines)
+        {
+            var descriptions = new List<CommandDescription>();
             for (int i = 0; i < lines.Length; i++)
             {
                 var values = lines[i].Split('\t');
-                var type = values[0];
-                switch(type)
-                {
-                    case "sum":
-                        types.Add(CommandType.Sum);
-                        args.Add(new List<double>(2));
-                        args[args.Count - 1].Add(double.Parse(values[1]));
-                        args[args.Count - 1].Add(double.Parse(values[2]));
-                        break;
-                    case "inversion":
-                        types.Add(CommandType.Inversion);
-                        args.Add(new List<double>(1));
-                        args[args.Count - 1].Add(double.Parse(values[1]));
-                        break;
-                    case "multiplication":
-                        types.Add(CommandType.Sum);
-                        args.Add(new List<double>(2));
-                        args[args.Count - 1].Add(double.Parse(values[1]));
-                        args[args.Count - 1].Add(double.Parse(values[2]));
-                        break;
-                    default:
-                        throw new ArgumentException($"Operation with type '{type}' does not exist");
-                        
-                }
-                    
-
-                if (type == "sum")
-                {
-                    types.Add(CommandType.Sum);
-                    args.Add(new List<double>(2));
-                    args[args.Count - 1].Add(double.Parse(values[1]));
-                    args[args.Count - 1].Add(double.Parse(values[2]));
-                }   
-
-                if (type == "inversion")
-                {
-                    types.Add(CommandType.Inversion);
-                    args.Add(new List<double>(1));
-                    args[args.Count - 1].Add(double.Parse(values[1]));
-                }
-
-                if (type == "multiplication")
-                {
-                    types.Add(CommandType.Multiplication);
-                    args.Add(new List<double>(2));
-                    args[args.Count - 1].Add(double.Parse(values[1]));
-                    args[args.Count - 1].Add(double.Parse(values[2]));
-                }                     
+                descriptions.Add(new CommandDescription(values));                
             }
-            return null;
+            return descriptions;
         }
     }
 }
