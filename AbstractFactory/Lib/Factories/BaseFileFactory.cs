@@ -16,26 +16,27 @@ namespace Lib.Factories
             var commands = new List<ICommand>(descriptions.Count);
             for(int i = 0; i < descriptions.Count; i++)
             {
+
                 commands.Add(createCommand(descriptions[i].type, descriptions[i].args));
             }
             return commands;
         }
-        protected ICommand createCommand(CommandType type, List<double> args)
+        protected ICommand createCommand(string type, List<string> args)
         {
-            if (type == CommandType.Sum)
+            var length = args.Count;
+            switch (type)
             {
-                return new SumCommand(args[0], args[1]);
+                case "sum":
+                    return new SumCommand(double.Parse(args[0]), double.Parse(args[1]));
+
+                case "inversion":
+                    return new InversionCommand(double.Parse(args[0]));
+
+                case "multiplication":
+                    return new MultiplicationCommand(double.Parse(args[0]), double.Parse(args[1]));
+                default:
+                    throw new ArgumentException($"Operation with type '{type}' does not exist");
             }
-            if (type == CommandType.Inversion)
-            {
-                return new InversionCommand(args[0]);
-            }
-            if (type == CommandType.Multiplication)
-            {
-                return new MultiplicationCommand(args[0], args[1]);
-            }
-            else
-                throw (new ArgumentException($"Operation with type '{type.ToString()}' does not exist"));
         }
 
         protected abstract string[] ReadFile(string path);
