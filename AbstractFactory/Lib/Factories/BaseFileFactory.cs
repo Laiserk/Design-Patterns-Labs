@@ -13,11 +13,11 @@ namespace Lib.Factories
             var lines = ReadFile(path);
             var descriptions = ParseFile(lines);
 
-            var commands = new List<ICommand>(descriptions.Count);
-            for(int i = 0; i < descriptions.Count; i++)
+            var commands = new List<ICommand>();
+            foreach(CommandDescription command in descriptions)
             {
 
-                commands.Add(createCommand(descriptions[i].type, descriptions[i].args));
+                commands.Add(createCommand(command.type, command.args));
             }
             return commands;
         }
@@ -41,12 +41,12 @@ namespace Lib.Factories
 
         protected abstract string[] ReadFile(string path);
 
-        protected static List<CommandDescription> ParseFile(string[] lines)
+        protected static IEnumerable<CommandDescription> ParseFile(IEnumerable<string> lines)
         {
             var descriptions = new List<CommandDescription>();
-            for (int i = 0; i < lines.Length; i++)
+            foreach(string line in lines)
             {
-                var values = lines[i].Split('\t');
+                var values = line.Split('\t');
                 descriptions.Add(new CommandDescription(values));                
             }
             return descriptions;
