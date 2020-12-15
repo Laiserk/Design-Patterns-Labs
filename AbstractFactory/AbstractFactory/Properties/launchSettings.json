@@ -2,7 +2,7 @@
   "profiles": {
     "AbstractFactory": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\Admin\\Documents\\Repos\\Design-Patterns-Labs\\AbstractFactory\\Config\\Config.tsv"
+      "commandLineArgs": "C:\\Users\\Admin\\Documents\\Repos\\Design-Patterns-Labs\\AbstractFactory\\AbstractFactory\\Config\\LocalConfig.tsv"
     }
   }
 }
