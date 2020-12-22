@@ -14,9 +14,9 @@ namespace AbstractFactory
         {
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path);
+                var request = (HttpWebRequest)WebRequest.Create(path);
             }
-            catch(System.InvalidCastException e)
+            catch(System.InvalidCastException)
             {
                 return false;
             }
